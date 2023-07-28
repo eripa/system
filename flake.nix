@@ -4,12 +4,12 @@
   nixConfig = {
     substituters = [
       "https://cache.nixos.org"
-      "https://kclejeune.cachix.org"
+      "https://eric.cachix.org"
     ];
 
     trusted-public-keys = [
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-      "kclejeune.cachix.org-1:fOCrECygdFZKbMxHClhiTS6oowOkJ/I/dh9q9b1I4ko="
+      "eric.cachix.org-1:fOCrECygdFZKbMxHClhiTS6oowOkJ/I/dh9q9b1I4ko="
     ];
   };
 
@@ -125,7 +125,7 @@
     mkChecks = {
       arch,
       os,
-      username ? "kclejeune",
+      username ? "eric",
     }: {
       "${arch}-${os}" = {
         "${username}_${os}" =
@@ -165,63 +165,63 @@
       });
 
     darwinConfigurations = {
-      "kclejeune@aarch64-darwin" = mkDarwinConfig {
+      "eric@aarch64-darwin" = mkDarwinConfig {
         system = "aarch64-darwin";
         extraModules = [./profiles/personal.nix ./modules/darwin/apps.nix];
       };
-      "kclejeune@x86_64-darwin" = mkDarwinConfig {
+      "eric@x86_64-darwin" = mkDarwinConfig {
         system = "x86_64-darwin";
         extraModules = [./profiles/personal.nix ./modules/darwin/apps.nix];
       };
-      "lejeukc1@aarch64-darwin" = mkDarwinConfig {
+      "eripa@aarch64-darwin" = mkDarwinConfig {
         system = "aarch64-darwin";
         extraModules = [./profiles/work.nix];
       };
-      "lejeukc1@x86_64-darwin" = mkDarwinConfig {
+      "eripa@x86_64-darwin" = mkDarwinConfig {
         system = "aarch64-darwin";
         extraModules = [./profiles/work.nix];
       };
     };
 
     nixosConfigurations = {
-      "kclejeune@x86_64-linux" = mkNixosConfig {
+      "eric@x86_64-linux" = mkNixosConfig {
         system = "x86_64-linux";
         hardwareModules = [
-          ./modules/hardware/phil.nix
+          ./modules/hardware/foo.nix
           inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t460s
         ];
         extraModules = [./profiles/personal.nix];
       };
-      "kclejeune@aarch64-linux" = mkNixosConfig {
+      "eric@aarch64-linux" = mkNixosConfig {
         system = "aarch64-linux";
-        hardwareModules = [./modules/hardware/phil.nix];
+        hardwareModules = [./modules/hardware/foo.nix];
         extraModules = [./profiles/personal.nix];
       };
     };
 
     homeConfigurations = {
-      "kclejeune@x86_64-linux" = mkHomeConfig {
-        username = "kclejeune";
+      "eric@x86_64-linux" = mkHomeConfig {
+        username = "eric";
         system = "x86_64-linux";
         extraModules = [./profiles/home-manager/personal.nix];
       };
-      "kclejeune@aarch64-linux" = mkHomeConfig {
-        username = "kclejeune";
+      "eric@aarch64-linux" = mkHomeConfig {
+        username = "eric";
         system = "aarch64-linux";
         extraModules = [./profiles/home-manager/personal.nix];
       };
-      "kclejeune@x86_64-darwin" = mkHomeConfig {
-        username = "kclejeune";
+      "eric@x86_64-darwin" = mkHomeConfig {
+        username = "eric";
         system = "x86_64-darwin";
         extraModules = [./profiles/home-manager/personal.nix];
       };
-      "kclejeune@aarch64-darwin" = mkHomeConfig {
-        username = "kclejeune";
+      "eric@aarch64-darwin" = mkHomeConfig {
+        username = "eric";
         system = "aarch64-darwin";
         extraModules = [./profiles/home-manager/personal.nix];
       };
-      "lejeukc1@x86_64-linux" = mkHomeConfig {
-        username = "lejeukc1";
+      "eripa@x86_64-linux" = mkHomeConfig {
+        username = "eripa";
         system = "x86_64-linux";
         extraModules = [./profiles/home-manager/work.nix];
       };

@@ -19,7 +19,7 @@
   };
 
   user = {
-    description = "Kennan LeJeune";
+    description = "Eric Ripa";
     home = "${
       if pkgs.stdenvNoCC.isDarwin
       then "/Users"
@@ -58,15 +58,15 @@
       wget
       git
       jq
+      yq-go
 
       # helpful shell stuff
       bat
       fzf
       ripgrep
 
-      # languages
-      python3
-      ruby
+      # other
+      q
     ];
     etc = {
       home-manager.source = "${inputs.home-manager}";
@@ -79,6 +79,9 @@
 
   fonts = {
     fontDir.enable = true;
-    fonts = with pkgs; [jetbrains-mono];
+    fonts = with pkgs; [
+        jetbrains-mono
+        (nerdfonts.override { fonts = [ "FiraCode" "Source Code Pro" ]; })
+      ];
   };
 }

@@ -6,11 +6,9 @@
   imports = [
     ./bat.nix
     ./direnv.nix
-    ./dotfiles
     ./fzf.nix
     ./git.nix
     ./kitty.nix
-    ./nushell.nix
     ./nvim
     ./shell.nix
     ./ssh.nix
@@ -33,7 +31,7 @@
     # You can update Home Manager without changing this value. See
     # the Home Manager release notes for a list of state version
     # changes in each release.
-    stateVersion = "22.05";
+    stateVersion = "23.05";
     sessionVariables = {
       GPG_TTY = "/dev/ttys000";
       EDITOR = "nvim";
@@ -51,12 +49,8 @@
 
     # define package definitions for current user environment
     packages = with pkgs; [
-      awscli2
-      # age
-      alejandra
-      cachix
+      age
       cb
-      cirrus-cli
       comma
       coreutils-full
       curl
@@ -64,7 +58,6 @@
       fd
       ffmpeg
       findutils
-      flyctl
       gawk
       gnugrep
       gnupg
@@ -77,17 +70,13 @@
       kubectx
       kubernetes-helm
       kustomize
-      lazydocker
       luajit
       mmv
-      ncdu
       neofetch
       nix
       nixfmt
       nixpkgs-fmt
-      nodejs-18_x
       parallel
-      poetry
       pre-commit
       # python with default packages
       (python3.withPackages
@@ -98,20 +87,15 @@
             matplotlib
             networkx
           ]))
-      ranger
       rclone
       rsync
-      (ruby.withPackages (ps: with ps; [rufo solargraph]))
       shellcheck
-      stylua
       sysdo
-      terraform
       tree
       treefmt
       trivy
-      vagrant
-      yarn
       yq-go
+      yt-dlp
     ];
   };
 

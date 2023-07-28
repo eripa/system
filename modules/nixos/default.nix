@@ -4,7 +4,9 @@
   ...
 }: {
   # bundles essential nixos modules
-  imports = [./keybase.nix ../common.nix];
+  imports = [
+    ../common.nix
+  ];
 
   services.syncthing = {
     enable = true;
@@ -26,12 +28,12 @@
       "${config.user.name}" = {
         isNormalUser = true;
         extraGroups = ["wheel" "networkmanager"]; # Enable ‘sudo’ for the user.
-        hashedPassword = "$6$1kR9R2U/NA0.$thN8N2sTo7odYaoLhipeuu5Ic4CS7hKDt1Q6ClP9y0I3eVMaFmo.dZNpPfdwNitkElkaLwDVsGpDuM2SO2GqP/";
+        hashedPassword = "$6$jRlsGwuBaNkeWKYi$VZcp1g9umUMqhAfwm9WTEYQaCN7cf0K4bwz4Eev5LTFFmzEJMSCOwkfHJvPl6E0kjV7CrPu23W0/JbDLRmWIc0";
       };
     };
   };
 
-  networking.hostName = "Phil"; # Define your hostname.
+  networking.hostName = "foo"; # Define your hostname.
   networking.networkmanager.enable = true;
 
   # Use the GRUB 2 boot loader.
@@ -119,5 +121,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "20.09"; # Did you read the comment?
+  system.stateVersion = "23.05"; # Did you read the comment?
 }
