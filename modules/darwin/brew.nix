@@ -17,11 +17,10 @@
     casks = [
       "1password"
       "1password-cli"
-      # "alt-tab"
       "bartender"
-      "docker"
+      "orbstack"
       "firefox-developer-edition"
-      "fork"
+      "alfred"
       "google-chrome"
       "iina"
       "obsidian"
@@ -32,6 +31,7 @@
       "signal"
       "slack"
       "alacritty"
+      "arq"
     ];
   };
 }
