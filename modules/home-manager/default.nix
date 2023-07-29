@@ -64,7 +64,13 @@
       google-cloud-sdk
       helm-docs
       httpie
-      hurl
+      q
+      dnsutils
+      mtr
+      btop
+      p7zip
+      xz
+      zip
       kubectl
       kubectx
       kubernetes-helm
@@ -80,10 +86,7 @@
       (python3.withPackages
         (ps:
           with ps; [
-            numpy
-            scipy
-            matplotlib
-            networkx
+            requests
           ]))
       rclone
       rsync
@@ -93,6 +96,7 @@
       treefmt
       trivy
       yq-go
+      jq
       yt-dlp
     ];
   };
