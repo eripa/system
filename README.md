@@ -54,7 +54,7 @@ Note that this step is naturally skipped on NixOS since `nix` is the package man
 Follow the installation instructions, then run
 
 ```bash
-sudo nixos-install --flake github:eripa/system#phil
+sudo nixos-install --flake github:eripa/system#foo
 ```
 
 ### Darwin/Linux

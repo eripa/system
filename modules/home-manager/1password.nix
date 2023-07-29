@@ -9,7 +9,6 @@
   sockPath = "${home}/.1password/agent.sock";
   aliases = {
     gh = "op plugin run -- gh";
-    cachix = "op plugin run -- cachix";
     brew = "op plugin run -- brew";
   };
 in {
