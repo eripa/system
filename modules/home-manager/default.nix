@@ -22,7 +22,6 @@
   };
 
   home = let
-    NODE_GLOBAL = "${config.home.homeDirectory}/.node-packages";
   in {
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage
@@ -40,10 +39,8 @@
       CLICOLOR = 1;
       LSCOLORS = "ExFxBxDxCxegedabagacad";
       KAGGLE_CONFIG_DIR = "${config.xdg.configHome}/kaggle";
-      NODE_PATH = "${NODE_GLOBAL}/lib";
     };
     sessionPath = [
-      "${NODE_GLOBAL}/bin"
       "${config.home.homeDirectory}/.rd/bin"
       "${config.home.homeDirectory}/.local/bin"
     ];
@@ -71,7 +68,6 @@
       kubectx
       kubernetes-helm
       kustomize
-      luajit
       mmv
       neofetch
       nix
@@ -109,20 +105,13 @@
     gpg.enable = true;
     htop.enable = true;
     jq.enable = true;
-    java = {
-      enable = true;
-      package = pkgs.jdk17;
-    };
     k9s.enable = true;
     lazygit.enable = true;
     less.enable = true;
     man.enable = true;
     nix-index.enable = true;
-    pandoc.enable = true;
     ripgrep.enable = true;
-    starship.enable = true;
     yt-dlp.enable = true;
-    zathura.enable = true;
     zoxide.enable = true;
   };
 }

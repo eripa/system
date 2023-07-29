@@ -81,7 +81,8 @@
     fontDir.enable = true;
     fonts = with pkgs; [
         jetbrains-mono
-        (nerdfonts.override { fonts = [ "FiraCode" "Source Code Pro" ]; })
+        source-code-pro
+        (nerdfonts.override { fonts = [ "FiraCode" ]; })
       ];
   };
 }
