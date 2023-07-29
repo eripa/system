@@ -9,8 +9,6 @@
 
   programs.neovim = {
     extraPackages = with pkgs; [
-      rubyPackages.solargraph
-      nodePackages.pyright
       rnix-lsp
       fzf
     ];
@@ -25,7 +23,6 @@
       coc-git
       coc-go
       coc-html
-      coc-java
       coc-json
       coc-lua
       coc-pairs
@@ -38,7 +35,6 @@
       coc-solargraph
       coc-tslint
       coc-tsserver
-      coc-vetur
       coc-vimlsp
       coc-vimtex
       coc-yaml
