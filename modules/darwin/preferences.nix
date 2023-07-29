@@ -78,6 +78,6 @@
 
   system.keyboard = {
     enableKeyMapping = true;
-    remapCapsLockToEsc = true;
+    remapCapsLockToEscape = true;
   };
 }
