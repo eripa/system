@@ -14,6 +14,7 @@
     ./ssh.nix
     ./tldr.nix
     ./tmux.nix
+    ./powerline-go.nix
   ];
 
   nixpkgs.config = {
