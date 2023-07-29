@@ -67,6 +67,7 @@
 
       # other
       q
+      docker-client
     ];
     etc = {
       home-manager.source = "${inputs.home-manager}";

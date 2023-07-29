@@ -201,12 +201,18 @@
       "eric@x86_64-linux" = mkHomeConfig {
         username = "eric";
         system = "x86_64-linux";
-        extraModules = [./profiles/home-manager/personal.nix];
+        extraModules = [
+          ./profiles/home-manager/personal.nix
+          ./modules/home-manager/nixos-only.nix
+        ];
       };
       "eric@aarch64-linux" = mkHomeConfig {
         username = "eric";
         system = "aarch64-linux";
-        extraModules = [./profiles/home-manager/personal.nix];
+        extraModules = [
+          ./profiles/home-manager/personal.nix
+          ./modules/home-manager/nixos-only.nix
+        ];
       };
       "eric@x86_64-darwin" = mkHomeConfig {
         username = "eric";
@@ -221,7 +227,10 @@
       "eripa@x86_64-linux" = mkHomeConfig {
         username = "eripa";
         system = "x86_64-linux";
-        extraModules = [./profiles/home-manager/work.nix];
+        extraModules = [
+          ./profiles/home-manager/work.nix
+          ./modules/home-manager/nixos-only.nix
+        ];
       };
     };
 

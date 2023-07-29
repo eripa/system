@@ -38,7 +38,7 @@
       VISUAL = "nvim";
       CLICOLOR = 1;
       LSCOLORS = "ExFxBxDxCxegedabagacad";
-      KAGGLE_CONFIG_DIR = "${config.xdg.configHome}/kaggle";
+      # KAGGLE_CONFIG_DIR = "${config.xdg.configHome}/kaggle";
     };
     sessionPath = [
       "${config.home.homeDirectory}/.rd/bin"
