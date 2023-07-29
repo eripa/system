@@ -58,7 +58,6 @@ in {
     plugins = with pkgs; [
       (mkZshPlugin {pkg = zsh-autopair;})
       (mkZshPlugin {pkg = zsh-completions;})
-      (mkZshPlugin {pkg = zsh-autosuggestions;})
       (mkZshPlugin {
         pkg = zsh-fast-syntax-highlighting;
         file = "fast-syntax-highlighting.plugin.zsh";

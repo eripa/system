@@ -44,6 +44,10 @@
     backupFileExtension = "backup";
   };
 
+  nix.extraOptions = ''
+    experimental-features = nix-command flakes
+  '';
+
   # environment setup
   environment = {
     systemPackages = with pkgs; [

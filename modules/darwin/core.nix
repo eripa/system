@@ -14,7 +14,9 @@ in {
     # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
 
     # packages installed in system profile
-    # systemPackages = [ ];
+    systemPackages = [ ];
+    systemPath = [ "/opt/homebrew/bin" ];
+    pathsToLink = [ "/Applications" ];
   };
 
   homebrew.brewPrefix =
