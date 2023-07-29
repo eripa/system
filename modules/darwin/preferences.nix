@@ -10,7 +10,7 @@
 
     # file viewer settings
     finder = {
-      AppleShowAllExtensions = true;
+      AppleShowAllExtensions = false;
       FXEnableExtensionChangeWarning = true;
       _FXShowPosixPathInTitle = true;
     };
@@ -42,7 +42,7 @@
     # dock settings
     dock = {
       # auto show and hide dock
-      autohide = true;
+      autohide = false;
       # remove delay for showing dock
       autohide-delay = 0.0;
       # how fast is the dock showing animation
@@ -52,26 +52,32 @@
       showhidden = false;
       show-recents = false;
       show-process-indicators = true;
-      orientation = "bottom";
+      orientation = "left";
       mru-spaces = false;
+
+      wvous-bl-corner = 2; # mission control
+      wvous-tl-corner = 4; # desktop
+      wvous-tr-corner = 5; # start screensaver
     };
 
     NSGlobalDomain = {
-      "com.apple.sound.beep.feedback" = 0;
-      "com.apple.sound.beep.volume" = 0.0;
+      "com.apple.sound.beep.feedback" = 1;
+      "com.apple.sound.beep.volume" = 0.4723665; # 25%
       # allow key repeat
       ApplePressAndHoldEnabled = false;
       # delay before repeating keystrokes
       InitialKeyRepeat = 10;
       # delay between repeated keystrokes upon holding a key
       KeyRepeat = 1;
-      AppleShowAllExtensions = true;
+      AppleShowAllExtensions = false;
       AppleShowScrollBars = "Automatic";
+
+      AppleTemperatureUnit = "Celsius";
     };
   };
 
   system.keyboard = {
     enableKeyMapping = true;
-    remapCapsLockToControl = true;
+    remapCapsLockToEsc = true;
   };
 }
