@@ -7,7 +7,7 @@
     terminal = "xterm-256color";
     clock24 = true;
     extraConfig = ''
-      ## general
+      ## shared
       ${builtins.readFile ./tmux-shared.conf}
 
       # make it easy to send C-b
@@ -30,5 +30,9 @@
       bind-key C-n next-window
       bind-key C-p previous-window
     '';
+  };
+  home.file.".config/tmux/tmux-main.conf" = {
+    enable = true;
+    text = builtins.readFile ./tmux-main.conf;
   };
 }
