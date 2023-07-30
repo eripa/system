@@ -50,6 +50,10 @@ in {
           eval "$(/opt/homebrew/bin/brew shellenv)"
         fi
       ''}
+      # disable autobind to avoid binding Up-Arrow to atuin
+      export ATUIN_NOBIND="true"
+      eval "$(atuin init zsh)"
+      bindkey '^r' _atuin_search_widget
       unset RPS1
     '';
     profileExtra = ''
