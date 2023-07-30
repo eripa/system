@@ -8,6 +8,7 @@
     ./direnv.nix
     ./alacritty.nix
     ./fzf.nix
+    ./atuin.nix
     ./git.nix
     ./kitty.nix
     ./nvim
