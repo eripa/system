@@ -185,14 +185,14 @@
       "eric@x86_64-linux" = mkNixosConfig {
         system = "x86_64-linux";
         hardwareModules = [
-          ./modules/hardware/foo.nix
+          ./modules/hardware/eleven.nix
           inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t460s
         ];
         extraModules = [./profiles/personal.nix];
       };
       "eric@aarch64-linux" = mkNixosConfig {
         system = "aarch64-linux";
-        hardwareModules = [./modules/hardware/foo.nix];
+        hardwareModules = [./modules/hardware/eleven.nix];
         extraModules = [./profiles/personal.nix];
       };
     };
