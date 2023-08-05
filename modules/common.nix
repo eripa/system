@@ -32,7 +32,6 @@
   hm = {
     imports = [
       ./home-manager
-      ./home-manager/1password.nix
     ];
   };
 
@@ -58,11 +57,23 @@
       coreutils-full
       findutils
       diffutils
+      gawk
+      gnugrep
+      gnupg
+      gnused
       curl
       wget
       git
       jq
       yq-go
+      dnsutils
+      mtr
+      btop
+      p7zip
+      xz
+      zip
+      mmv
+      neofetch
 
       # helpful shell stuff
       bat
@@ -70,8 +81,19 @@
       ripgrep
 
       # other
+      age
+      rclone
+      rsync
+      tree
+
+      # homelab stuff
       q
       docker-client
+      kubectl
+      kubectx
+      kubernetes-helm
+      kustomize
+      argocd
     ];
     etc = {
       home-manager.source = "${inputs.home-manager}";

@@ -18,7 +18,7 @@
     # trackpad settings
     trackpad = {
       # silent clicking = 0, default = 1
-      ActuationStrength = 0;
+      ActuationStrength = 1;
       # enable tap to click
       Clicking = true;
       # firmness level, 0 = lightest, 2 = heaviest
@@ -33,7 +33,7 @@
 
     # firewall settings
     alf = {
-      # 0 = disabled 1 = enabled 2 = blocks all connections except for essential services
+      # 0 = disabled, 1 = enabled, 2 = blocks all connections except for essential services
       globalstate = 1;
       loggingenabled = 0;
       stealthenabled = 1;
@@ -66,9 +66,9 @@
       # allow key repeat
       ApplePressAndHoldEnabled = false;
       # delay before repeating keystrokes
-      InitialKeyRepeat = 10;
+      InitialKeyRepeat = 20;
       # delay between repeated keystrokes upon holding a key
-      KeyRepeat = 1;
+      KeyRepeat = 2;
       AppleShowAllExtensions = false;
       AppleShowScrollBars = "Automatic";
 

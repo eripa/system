@@ -1,10 +1,8 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     cacert
-    kubectl
-    kubernetes-helm
-    kustomize
     vault-bin
+    google-cloud-sdk
   ];
   programs.git = {
     enable = true;

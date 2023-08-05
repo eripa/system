@@ -3,11 +3,15 @@
   pkgs,
   ...
 }: {
+  imports = [
+    ../../modules/common.nix
+  ];
+  environment.systemPackages = with pkgs; [];
+
    services.udev.extraHwdb = ''
     evdev:input:b0003v05ACp0249e0111*
       KEYBOARD_KEY_70039=esc # CAPSLOCK
   '';
-
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;

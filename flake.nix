@@ -62,7 +62,7 @@
       system ? "aarch64-darwin",
       nixpkgs ? inputs.nixpkgs,
       baseModules ? [
-        home-manager.darwinModules.home-manager
+        home-manager.darwinModule
         ./modules/darwin
       ],
       extraModules ? [],
@@ -80,7 +80,7 @@
       nixpkgs ? inputs.nixos-unstable,
       hardwareModules,
       baseModules ? [
-        home-manager.nixosModules.home-manager
+        home-manager.nixosModule
         ./modules/nixos
       ],
       extraModules ? [],
@@ -166,21 +166,17 @@
       "hinata" = mkDarwinConfig {
         system = "aarch64-darwin";
         extraModules = [
+          ./hosts/darwin/hinata.nix
           ./profiles/personal.nix
           ./modules/darwin/apps.nix
-          {
-            networking.hostName = "hinata";
-          }
         ];
       };
       "hinata-vm" = mkDarwinConfig {
         system = "aarch64-darwin";
         extraModules = [
+          ./hosts/darwin/hinata-vm.nix
           ./profiles/personal.nix
           ./modules/darwin/apps.nix
-          {
-            networking.hostName = "hinata-vm";
-          }
         ];
       };
       "air11" = mkDarwinConfig {
@@ -189,11 +185,11 @@
       };
       "eir" = mkDarwinConfig {
         system = "aarch64-darwin";
+        nixpkgs = inputs.nixos-unstable;
         extraModules = [
-          ./profiles/work.nix ./modules/darwin/apps.nix
-          {
-            networking.hostName = "eir";
-          }
+          ./hosts/darwin/eir.nix
+          ./profiles/work.nix
+          ./modules/darwin/apps.nix
         ];
       };
     };
@@ -202,24 +198,23 @@
       "lnv01" = mkNixosConfig {
         system = "x86_64-linux";
         hardwareModules = [
-          ./modules/hardware/eleven.nix
-          # inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t460s
+          ./modules/hardware/lnv01.nix
         ];
-        extraModules = [./profiles/personal.nix];
+        extraModules = [
+          ./hosts/nixos/lnv01.nix
+          ./profiles/personal.nix
+        ];
       };
       "eleven" = mkNixosConfig {
         system = "x86_64-linux";
         hardwareModules = [
           ./modules/hardware/eleven.nix
-          # inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t460s
         ];
-        extraModules = [./profiles/personal.nix];
+        extraModules = [
+          ./hosts/nixos/eleven.nix
+          ./profiles/personal.nix
+        ];
       };
-      # "eir" = mkNixosConfig {
-      #   system = "aarch64-linux";
-      #   hardwareModules = [./modules/hardware/eleven.nix];
-      #   extraModules = [./profiles/work.nix];
-      # };
     };
 
     homeConfigurations = {
