@@ -12,8 +12,8 @@
         decorations = "full";
         dynamic_padding = true;
         dimensions = {
-          lines = 3;
-          columns = 200;
+          lines = 32;
+          columns = 160;
         };
       };
 

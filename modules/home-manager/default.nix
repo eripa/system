@@ -10,7 +10,6 @@
     ./fzf.nix
     ./atuin.nix
     ./git.nix
-    ./kitty.nix
     ./nvim
     ./shell.nix
     ./ssh.nix
@@ -34,18 +33,20 @@
     # the Home Manager release notes for a list of state version
     # changes in each release.
     stateVersion = "23.05";
-    sessionVariables = {
-      GPG_TTY = "/dev/ttys000";
-      EDITOR = "nvim";
-      VISUAL = "nvim";
-      CLICOLOR = 1;
-      LSCOLORS = "ExFxBxDxCxegedabagacad";
-      # KAGGLE_CONFIG_DIR = "${config.xdg.configHome}/kaggle";
-    };
-    sessionPath = [
-      "${config.home.homeDirectory}/.rd/bin"
-      "${config.home.homeDirectory}/.local/bin"
-    ];
+
+    ## TODO cleanup
+    # sessionVariables = {
+    #   GPG_TTY = "/dev/ttys000";
+    #   EDITOR = "nvim";
+    #   VISUAL = "nvim";
+    #   CLICOLOR = 1;
+    #   LSCOLORS = "ExFxBxDxCxegedabagacad";
+    #   # KAGGLE_CONFIG_DIR = "${config.xdg.configHome}/kaggle";
+    # };
+    # sessionPath = [
+    #   "${config.home.homeDirectory}/.rd/bin"
+    #   "${config.home.homeDirectory}/.local/bin"
+    # ];
 
     # define package definitions for current user environment
     packages = with pkgs; [
@@ -55,7 +56,6 @@
       coreutils-full
       curl
       diffutils
-      fd
       ffmpeg
       findutils
       gawk

@@ -163,42 +163,67 @@
       });
 
     darwinConfigurations = {
-      "eric@aarch64-darwin" = mkDarwinConfig {
+      "hinata" = mkDarwinConfig {
         system = "aarch64-darwin";
-        extraModules = [./profiles/personal.nix ./modules/darwin/apps.nix];
+        extraModules = [
+          ./profiles/personal.nix
+          ./modules/darwin/apps.nix
+          {
+            networking.hostName = "hinata";
+          }
+        ];
       };
-      "eric@x86_64-darwin" = mkDarwinConfig {
+      "hinata-vm" = mkDarwinConfig {
+        system = "aarch64-darwin";
+        extraModules = [
+          ./profiles/personal.nix
+          ./modules/darwin/apps.nix
+          {
+            networking.hostName = "hinata-vm";
+          }
+        ];
+      };
+      "air11" = mkDarwinConfig {
         system = "x86_64-darwin";
         extraModules = [./profiles/personal.nix ./modules/darwin/apps.nix];
       };
-      "eripa@aarch64-darwin" = mkDarwinConfig {
+      "eir" = mkDarwinConfig {
         system = "aarch64-darwin";
-        extraModules = [./profiles/work.nix];
-      };
-      "eripa@x86_64-darwin" = mkDarwinConfig {
-        system = "aarch64-darwin";
-        extraModules = [./profiles/work.nix];
+        extraModules = [
+          ./profiles/work.nix ./modules/darwin/apps.nix
+          {
+            networking.hostName = "eir";
+          }
+        ];
       };
     };
 
     nixosConfigurations = {
-      "eric@x86_64-linux" = mkNixosConfig {
+      "lnv01" = mkNixosConfig {
         system = "x86_64-linux";
         hardwareModules = [
           ./modules/hardware/eleven.nix
-          inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t460s
+          # inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t460s
         ];
         extraModules = [./profiles/personal.nix];
       };
-      "eric@aarch64-linux" = mkNixosConfig {
-        system = "aarch64-linux";
-        hardwareModules = [./modules/hardware/eleven.nix];
+      "eleven" = mkNixosConfig {
+        system = "x86_64-linux";
+        hardwareModules = [
+          ./modules/hardware/eleven.nix
+          # inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t460s
+        ];
         extraModules = [./profiles/personal.nix];
       };
+      # "eir" = mkNixosConfig {
+      #   system = "aarch64-linux";
+      #   hardwareModules = [./modules/hardware/eleven.nix];
+      #   extraModules = [./profiles/work.nix];
+      # };
     };
 
     homeConfigurations = {
-      "eric@x86_64-linux" = mkHomeConfig {
+      "lnv01" = mkHomeConfig {
         username = "eric";
         system = "x86_64-linux";
         extraModules = [
@@ -206,31 +231,25 @@
           ./modules/home-manager/nixos-only.nix
         ];
       };
-      "eric@aarch64-linux" = mkHomeConfig {
-        username = "eric";
-        system = "aarch64-linux";
-        extraModules = [
-          ./profiles/home-manager/personal.nix
-          ./modules/home-manager/nixos-only.nix
-        ];
-      };
-      "eric@x86_64-darwin" = mkHomeConfig {
+      "air11" = mkHomeConfig {
         username = "eric";
         system = "x86_64-darwin";
         extraModules = [./profiles/home-manager/personal.nix];
       };
-      "eric@aarch64-darwin" = mkHomeConfig {
+      "hinata" = mkHomeConfig {
         username = "eric";
         system = "aarch64-darwin";
         extraModules = [./profiles/home-manager/personal.nix];
       };
-      "eripa@x86_64-linux" = mkHomeConfig {
+      "hinata-vm" = mkHomeConfig {
+        username = "eric";
+        system = "aarch64-darwin";
+        extraModules = [./profiles/home-manager/personal.nix];
+      };
+      "eir" = mkHomeConfig {
         username = "eripa";
-        system = "x86_64-linux";
-        extraModules = [
-          ./profiles/home-manager/work.nix
-          ./modules/home-manager/nixos-only.nix
-        ];
+        system = "aarch64-darwin";
+        extraModules = [./profiles/home-manager/personal.nix];
       };
     };
 

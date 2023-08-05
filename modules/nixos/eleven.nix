@@ -12,7 +12,7 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  
+
   networking.hostName = "eleven";
   networking.networkmanager.enable = true;
 
@@ -27,5 +27,5 @@
   services.xserver.displayManager.gdm.wayland = true;
   programs.sway = {
     enable = true;
-  }; 
+  };
 }

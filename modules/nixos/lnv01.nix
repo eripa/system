@@ -33,7 +33,7 @@
     };
   };
 
-  networking.hostName = "foo"; # Define your hostname.
+  networking.hostName = "lnv01"; # Define your hostname.
   networking.networkmanager.enable = true;
 
   # Use the GRUB 2 boot loader.
